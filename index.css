@@ -1,0 +1,356 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a0b2e 50%, #0a0a0f 100%);
+    color: #e0d0ff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Анимированный фон */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 50%, rgba(106, 13, 173, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(75, 0, 130, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Шапка */
+.mosqwenh1 {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #c0a0ff, #8a2be2, #4b0082);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+    animation: glow 3s ease-in-out infinite;
+}
+
+.frontdev {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #b794f4;
+    margin-bottom: 2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.frontdev::before,
+.frontdev::after {
+    content: '✦';
+    color: #8a2be2;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+.description {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    background: rgba(26, 11, 46, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(106, 13, 173, 0.3);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #d8c0ff;
+}
+
+/* Заголовок навыков */
+.skillsh3 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 4rem 0 2rem;
+    color: #b794f4;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+    position: relative;
+}
+
+.skillsh3::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #8a2be2, #4b0082, #8a2be2, transparent);
+    margin: 0.5rem auto;
+}
+
+/* Контейнер для ленты */
+.divskills {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 2rem 0 4rem;
+    overflow: hidden;
+    border-radius: 30px;
+    background: rgba(10, 10, 15, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    box-shadow: 0 0 50px rgba(75, 0, 130, 0.3);
+}
+
+/* Лента с фото (плавная бесконечная анимация) */
+.skills-track {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    animation: scroll 30s linear infinite;
+    will-change: transform;
+}
+
+.skill-item {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 280px;
+    margin: 10px 20px;
+    background: rgba(26, 11, 46, 0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    background: rgba(138, 43, 226, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+}
+
+.skill-item img {
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.8));
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.skill-item:hover img {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 30px rgba(186, 85, 211, 0.9));
+}
+
+.skill-item p {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding: 0.6rem 1.8rem;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.3), rgba(75, 0, 130, 0.3));
+    border: 1px solid #8a2be2;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/* Плавная бесконечная анимация */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-280px * 6 - 240px)); /* Сдвигаем на ширину всех элементов + отступы */
+    }
+}
+
+/* Социальные ссылки */
+.links {
+    text-align: center;
+    font-size: 2rem;
+    margin: 4rem 0 2rem;
+    color: #b794f4;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 2rem 0 4rem;
+    flex-wrap: wrap;
+}
+
+.github, .telegram {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #2d1b3a, #1a0b2e);
+    border: 2px solid #8a2be2;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    z-index: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.github::before, .telegram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.4), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.github:hover, .telegram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+    border-color: #b794f4;
+}
+
+.github:hover::before, .telegram:hover::before {
+    left: 100%;
+}
+
+.github::after, .telegram::after {
+    content: '→';
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.github:hover::after, .telegram:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Декоративные элементы */
+.floating-shape {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shape1 {
+    top: -100px;
+    right: -100px;
+    animation: float 20s ease-in-out infinite;
+}
+
+.shape2 {
+    bottom: -100px;
+    left: -100px;
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 30px rgba(138, 43, 226, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 60px rgba(186, 85, 211, 0.8), 0 0 20px #8a2be2;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(30px, 30px) scale(1.1);
+    }
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .mosqwenh1 {
+        font-size: 3rem;
+    }
+    
+    .frontdev {
+        font-size: 1.2rem;
+    }
+    
+    .description {
+        margin: 1.5rem 1rem;
+    }
+    
+    .skillsh3 {
+        font-size: 1.6rem;
+    }
+    
+    .divskills {
+        height: 240px;
+    }
+    
+    .skill-item {
+        width: 220px;
+        height: 220px;
+        margin: 10px 15px;
+    }
+    
+    .skill-item img {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .skill-item p {
+        font-size: 1.1rem;
+        padding: 0.5rem 1.2rem;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-220px * 6 - 180px));
+        }
+    }
+    
+    .links {
+        font-size: 1.6rem;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+    
+    .github, .telegram {
+        min-width: 160px;
+        padding: 0.8rem 1.5rem;
+    }
+}
